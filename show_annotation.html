@@ -19,6 +19,13 @@ document.getElementById("myText").style.top = py;     
 setTimeout("move()",3000);       }                /* onloadイベント発生した時に行う処理を記述 */        
 function init() {       
 move();         }      
+  
+  function tweet(r){
+    var result = r;  
+    var tag = "&hashtags=TDU_hasegawaLAB_annotation_";   
+    tag = tag.concat(file_name);  
+    location.href = "https://twitter.com/intent/tweet?text="+ encodeURIComponent(result) +"&hashtags=TDU_hasegawaLAB_annotation"+"tag"; }
+  
 </script>  
 <link rel="stylesheet" type="text/css" href="/common/css/example.css">
 </head>   <body onload="init()">    
