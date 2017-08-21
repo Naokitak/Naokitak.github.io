@@ -1,33 +1,27 @@
 <html>  
-<head>    
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-<title>付箋の表示（ネコ：ノルウェージャンフォエストキャット）</title>    
-<meta http-equiv="Content-Language" content="ja" />    
-<meta http-equiv="Content-Script-Type" content="text/javascript" />    
-<script type="text/javascript">       
-var px = 100;       
-var py = 100;       
-var tx = ["ノルウェージャンフォレストキャット","毛がふさふさ","かわいい","目が金色","ハンター"]; 
-var n = -1;  
-function move()
-{       
-px = px + 10;       
-n = n+1;       
-document.getElementById("fusen").value = tx[n%5];
-document.getElementById("myText").style.left = px;  
-document.getElementById("myText").style.top = py;     
-setTimeout("move()",3000);       }                /* onloadイベント発生した時に行う処理を記述 */        
-function init() {       
-move();         }      
-  
-
-  
-</script>  
-<link rel="stylesheet" type="text/css" href="/common/css/example.css">
-</head>   <body onload="init()">    
-<img src="cat.png"><br>   
-<div id="myText" style="POSITION: absolute; Z-INDEX: 2; VISIBILITY: visible; TOP: 100px; LEFT: 100px;">     
-<input type="text" size="40" id="fusen" />   
-</div>  
-</body>
+  <head>     
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />   
+    <title>付箋の表示（モネ：日傘の女）</title> 
+    <meta http-equiv="Content-Language" content="ja" />  
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />  
+    <script type="text/javascript"> 
+      var px = [43,350,483,352,30];    
+      var py = [383,166,509,751,462];     
+      var tx = ["風が吹いている","顔が描かれていない","タッチがよい","色がやわらか","ブルーがきれい"]; 
+      var n;    
+      function move(){      
+        n = Math.floor(Math.random()*1000);     
+        document.getElementById("fusen").value = tx[n%5]; 
+        document.getElementById("myText").style.left = px[n%5];
+        document.getElementById("myText").style.top = py[n%5];   
+        setTimeout("move()",3000);       }                /* onloadイベント発生した時に行う処理を記述 */    
+      function init() {           
+        move();         }     
+    </script>   
+    <link rel="stylesheet" type="text/css" href="/common/css/example.css">
+  </head>   <body onload="init()">      <img src="cat.png"><br>    
+  <div id="myText" style="POSITION: absolute; Z-INDEX: 2; VISIBILITY: visible; TOP: 0px; LEFT: 0px;">  
+    <input type="text" size="20" id="fusen" />     
+  </div>  
+  </body>
 </html>
