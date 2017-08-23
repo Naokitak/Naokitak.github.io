@@ -8,7 +8,10 @@
     <script type="text/javascript">
       var px = [156,697,1268,1256,1287]; 
       var py = [368,830,50,496,953];
+      
       var tx = ["一番人気","おいしい","新商品","定番メニュー","ちょうどいい量"];
+      
+      
       var n; 
       function move(){ 
         n = Math.floor(Math.random()*1000);
@@ -18,25 +21,10 @@
         setTimeout("move()",3000);       }                /* onloadイベント発生した時に行う処理を記述 */
       function init() { 
         move();         } 
+      <input type="button" value="tx" onClick="window.open('http://google.com')">
     </script> 
     
-    <script type="text/javascript">
-    function urlJump(){
-        var tx = window.open("http://www.infoseek.co.jp/");
-        if(confirm("Googleに移動しますか？" )){
-            /* [OK]ボタンが押されたら（TRUE）、Googleへジャンプ */
-            w.location.href = "http://www.google.co.jp/";
-        }else{
-            /* [キャンセル]ボタンがされたら（FALSE）、Bingへジャンプ */
-            w.location.href = "https://www.bing.com/";
-        }
-        w.focus();
-    }
-</script>
 
-<form action="#">
-    <input type="button" value="tx" onclick="urlJump()" />
-</form>
 
    
     <link rel="stylesheet" type="text/css" href="/common/css/example.css">
