@@ -1,39 +1,20 @@
-<!DOCTYPE html>
-<html lang="ja">
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <!-- jQueryの読み込み -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Javascript でリンクを開く</title>
+    <script>
+        // 同一画面でリンクを開く
+        function openURL(url) { location.href = url; }
+
+        // 別画面でリンクを開く
+        function openWIN(url) { window.open(url); }
+    </script>
 </head>
+
 <body>
-
-<!-- テキストフォーム -->
-<input type="text" id="inputText" placeholder="https://cookpad.com/recipe/1374491">
-
-
-<!-- リンク -->
-<a href="https://cookpad.com/recipe/1374491" id="link">レシピ</a>
-
-
-<!-- ▼ jQueryによる処理 ▼ -->
-<script>
-$(function() {
-
-    // テキストフォームを監視して入力があるたびに実行
-    $('#inputText').on('input change', function() {
-
-        // テキストを取得
-        var param = $(this).val();
-
-        // リンクを書き換え
-        $('#link').attr('href', '/aaa.php?param=' + param);
-
-    });
-
-});
-</script>
-<!-- ▲ jQueryによる処理 ▲ -->
-
-
+    <a href="javascript:void('0');" onclick="openURL('https://www.google.co.jp/')">同一画面でリンクを開く</a><br>
+    <a href="javascript:void('0');" onclick="openWIN('https://www.google.co.jp/')">別画面でリンクを開く</a>
 </body>
+</html>
 </html>
