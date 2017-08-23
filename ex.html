@@ -1,20 +1,17 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>Javascript でリンクを開く</title>
-    <script>
-        // 同一画面でリンクを開く
-        function openURL(url) { location.href = url; }
+<script type="text/javascript">
+    function urlJump(){
+        var w = window.open("http://www.infoseek.co.jp/");
+        if(confirm("Googleに移動しますか？" )){
+            /* [OK]ボタンが押されたら（TRUE）、Googleへジャンプ */
+            w.location.href = "http://www.google.co.jp/";
+        }else{
+            /* [キャンセル]ボタンがされたら（FALSE）、Bingへジャンプ */
+            w.location.href = "https://www.bing.com/";
+        }
+        w.focus();
+    }
+</script>
 
-        // 別画面でリンクを開く
-        function openWIN(url) { window.open(url); }
-    </script>
-</head>
-
-<body>
-    <a href="javascript:void('0');" onclick="openURL('https://www.google.co.jp/')">同一画面でリンクを開く</a><br>
-    <a href="javascript:void('0');" onclick="openWIN('https://www.google.co.jp/')">別画面でリンクを開く</a>
-</body>
-</html>
-</html>
+<form action="#">
+    <input type="button" value="ジャンプ" onclick="urlJump()" />
+</form>
