@@ -12,7 +12,7 @@
 
 
 <!-- リンク -->
-<a href="#" id="link">レシピ</a>
+<a href="https://cookpad.com/recipe/1374491" id="link">レシピ</a>
 
 
 <!-- ▼ jQueryによる処理 ▼ -->
@@ -26,7 +26,7 @@ $(function() {
         var param = $(this).val();
 
         // リンクを書き換え
-        $('#link').attr('href', '/aaa.php?param=https://cookpad.com/recipe/1374491' + param);
+        $('#link').attr('href', '/aaa.php?param=' + param);
 
     });
 
