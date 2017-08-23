@@ -1,17 +1,5 @@
-<script type="text/javascript">
-    function urlJump(){
-        var w = window.open("http://www.infoseek.co.jp/");
-        if(confirm("Googleに移動しますか？" )){
-            /* [OK]ボタンが押されたら（TRUE）、Googleへジャンプ */
-            w.location.href = "http://www.google.co.jp/";
-        }else{
-            /* [キャンセル]ボタンがされたら（FALSE）、Bingへジャンプ */
-            w.location.href = "https://www.bing.com/";
-        }
-        w.focus();
-    }
-</script>
+<!--同じページでリンク先が開く-->
+<input type="button" value="リンク" onClick="location.href='http://google.com'">
 
-<form action="#">
-    <input type="button" value="ジャンプ" onclick="urlJump()" />
-</form>
+<!--新しいタブでリンク先が開く-->
+<input type="button" value="リンク" onClick="window.open('http://google.com')">
