@@ -9,12 +9,12 @@
 	      var px = new Array(100);
 	      var py = new Array(100);
 	      var tx = new Array(100);
-	      var n;
+	      var n;/*random*/
 	      function move(){
-		      n = Math.floor(Math.random()*1000);
-		      document.getElementById("fusen").value = tx[n%an];
-		      document.getElementById("myText").style.left = px[n%an];
-		      document.getElementById("myText").style.top = py[n%an];
+		     
+		      document.getElementById("fusen1").value = tx[5];//中の数字が行数
+		      document.getElementById("myText1").style.left = px[5];
+		      document.getElementById("myText1").style.top = py[5];
 		      setTimeout("move()",2000);
 	      }
 	      
@@ -27,14 +27,14 @@
 			 reader.readAsText(file[0]);
 			 reader.onload = function(ev){
 				 alert(reader.result);
-				 ln = reader.result.split("\n");
-				 an = ln.length-1;
+				 ln = reader.result.split("\n");//txtファイルの配列？
+				 an = ln.length-1;//txtファイルの行数-1
 				 document.getElementById("gazo").src = ln[0];
-				 for(var i = 1; i < an+1; i++) {
-				 	w = ln[i].split(",");
-				 	px[i-1] = w[0];
-					py[i-1] = w[1];
-					tx[i-1] = w[2];
+				 for(var i = 1; i < an+1; i++) {//iが付箋の行数になるまで繰り返し
+				 	w = ln[i].split(",");//文字列をカンマで区切って分割
+				 	px[i-1] = w[0];//x座標
+					py[i-1] = w[1];//y座標
+					tx[i-1] = w[2];//付箋の内容
 				 }
 			 }
 		 },false);
@@ -51,8 +51,12 @@
 			<input type="file" id="selfile"><br>
 		</form>
 		<a href="https://mackhasegawa.github.io/put_annotation.html">[付箋の生成]</a><br>
-	   <div id="myText" style="POSITION: absolute; Z-INDEX: 2; VISIBILITY: visible; TOP: -1000px; LEFT: 0px;">
-		   <input type="text" size="20" id="fusen" />
+	 
+		<div id="myText1" style="POSITION: absolute; Z-INDEX: 2; VISIBILITY: visible; TOP: -1000px; LEFT: 0px;">
+		   <input type="text" size="20" id="fusen1" />
+			
+			
+		   
 	   </div>
 	</body>
 </html>
