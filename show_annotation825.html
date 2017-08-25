@@ -11,10 +11,10 @@
 	      var tx = new Array(100);
 	      var n;
 	      function move(){
-		      n = Math.floor(Math.random()*1000);
-		      document.getElementById("fusen").value = tx[n%an];
-		      document.getElementById("myText").style.left = px[n%an];
-		      document.getElementById("myText").style.top = py[n%an];
+		     for(var i=1; i < an+1; i++)
+		      document.getElementById("fusen").value = tx[an];
+		      document.getElementById("myText").style.left = px[an];
+		      document.getElementById("myText").style.top = py[an];
 		      setTimeout("move()",2000);
 	      }
 	      
