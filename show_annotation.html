@@ -15,6 +15,11 @@
 		      document.getElementById("fusen1").value = tx[5];//中の数字が行数
 		      document.getElementById("myText1").style.left = px[5];//数字を変えて表示する内容を選ぶ
 		      document.getElementById("myText1").style.top = py[5];
+		      
+		      document.getElementById("fusen2").value = tx[4];//中の数字が行数
+		      document.getElementById("myText2").style.left = px[4];//数字を変えて表示する内容を選ぶ
+		      document.getElementById("myText2").style.top = py[4];
+		      
 		      setTimeout("move()",2000);
 	      }
 	      
@@ -54,6 +59,10 @@
 	 
 		<div id="myText1" style="POSITION: absolute; Z-INDEX: 2; VISIBILITY: visible; TOP: -1000px; LEFT: 0px;">
 		   <input type="text" size="20" id="fusen1" />
+		
+			
+		<div id="myText2" style="POSITION: absolute; Z-INDEX: 2; VISIBILITY: visible; TOP: -1000px; LEFT: 0px;">
+		   <input type="text" size="20" id="fusen2" />
 			
 			
 		   
